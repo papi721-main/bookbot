@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""main.py"""
+"""
+main.py
+
+The entry point to our program and any code that doesn't fit elsewhere
+"""
 
 
 def get_book_text(file_path: str):
