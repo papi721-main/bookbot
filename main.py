@@ -4,7 +4,11 @@ main.py
 
 The entry point to our program and any code that doesn't fit elsewhere
 """
-from stats import get_character_counts, get_number_of_words
+from stats import (
+    get_character_counts,
+    get_sorted_character_counts,
+    get_words_count,
+)
 
 
 def get_book_text(file_path: str):
@@ -24,15 +28,34 @@ def get_book_text(file_path: str):
     return text
 
 
+def print_report(
+    file_path: str, words_count: int, character_count_sorted: list[dict]
+):
+    """Prints a report on the terminal"""
+    print(
+        f"""============ BOOKBOT ============
+Analyzing book found at {file_path}
+----------- Word Count ----------
+Found {words_count} total words
+--------- Character Count -------"""
+    )
+    for record in character_count_sorted:
+        if record["char"].isalpha():
+            print(f"{record['char']}: {record['count']}")
+    print("============= END ===============")
+
+
 def main():
     """Main Function"""
 
-    text = get_book_text("./books/frankenstein.txt")
-    num_words_message = get_number_of_words(text)
-    print(num_words_message)
+    file_path = "books/frankenstein.txt"
+    text = get_book_text(file_path)
+    words_count = get_words_count(text)
 
-    character_count = get_character_counts(text)
-    print(character_count)
+    character_counts = get_character_counts(text)
+    character_counts_sorted = get_sorted_character_counts(character_counts)
+
+    print_report(file_path, words_count, character_counts_sorted)
 
 
 if __name__ == "__main__":
