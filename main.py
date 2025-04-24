@@ -19,11 +19,27 @@ def get_book_text(filepath: str):
     return file_contents
 
 
+def get_number_of_words(file_content: str):
+    """
+    Takes the content of a file as a string
+    and returns the number of words in a string
+
+    Args:
+        file_content (str): the contents of a file
+
+    Returns:
+        str: number of words in the file, using a string format
+    """
+    num_words = len(file_content.split())
+    return f"{num_words} words found in the document"
+
+
 def main():
     """Main Function"""
 
     contents = get_book_text("./books/frankenstein.txt")
-    print(contents)
+    num_words_message = get_number_of_words(contents)
+    print(num_words_message)
 
 
 if __name__ == "__main__":
