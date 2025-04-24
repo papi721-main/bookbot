@@ -17,12 +17,6 @@ def get_book_text(file_path: str):
     """
     Takes a file path as a string and returns
     the contents of the file as a string
-
-    Args:
-        file_path (str): path to the file
-
-    Returns:
-        str: text in the file as string
     """
     with open(file_path) as f:
         text = f.read()
