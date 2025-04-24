@@ -15,10 +15,10 @@ def get_number_of_words(text: str):
         text (str): the text in the file
 
     Returns:
-        str: number of words in the text, using a string format
+        int: number of words in the text
     """
     num_words = len(text.split())
-    return f"{num_words} words found in the document"
+    return num_words
 
 
 def get_character_counts(text: str):
