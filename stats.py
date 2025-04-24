@@ -6,7 +6,7 @@ This file contains functions for analyzing texts
 """
 
 
-def get_number_of_words(text: str):
+def get_words_count(text: str):
     """
     Takes the text of a file as a string and returns the number of words
     in the text, using a string format
@@ -17,8 +17,8 @@ def get_number_of_words(text: str):
     Returns:
         int: number of words in the text
     """
-    num_words = len(text.split())
-    return num_words
+    words_count = len(text.split())
+    return words_count
 
 
 def get_character_counts(text: str):
@@ -47,7 +47,7 @@ def sort_on_count(count_dict: dict):
     return count_dict["count"]
 
 
-def get_sorted_character_counts_list(character_count: dict):
+def get_sorted_character_counts(character_count: dict):
     """
     Takes the dictionary of characters and their counts and returns a sorted
     list of dictionaries
