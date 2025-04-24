@@ -4,7 +4,7 @@ main.py
 
 The entry point to our program and any code that doesn't fit elsewhere
 """
-from stats import get_number_of_words
+from stats import get_character_counts, get_number_of_words
 
 
 def get_book_text(file_path: str):
@@ -30,6 +30,9 @@ def main():
     file_contents = get_book_text("./books/frankenstein.txt")
     num_words_message = get_number_of_words(file_contents)
     print(num_words_message)
+
+    character_count = get_character_counts(file_contents)
+    print(character_count)
 
 
 if __name__ == "__main__":
