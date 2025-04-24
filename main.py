@@ -2,18 +2,18 @@
 """main.py"""
 
 
-def get_book_text(filepath: str):
+def get_book_text(file_path: str):
     """
     Takes a file path as a string and returns
     the contents of the file as a string
 
     Args:
-        filepath (str): file path
+        file_path (str): path to the file
 
     Returns:
         str: contents of the file
     """
-    with open(filepath) as f:
+    with open(file_path) as f:
         file_contents = f.read()
 
     return file_contents
@@ -37,8 +37,8 @@ def get_number_of_words(file_content: str):
 def main():
     """Main Function"""
 
-    contents = get_book_text("./books/frankenstein.txt")
-    num_words_message = get_number_of_words(contents)
+    file_contents = get_book_text("./books/frankenstein.txt")
+    num_words_message = get_number_of_words(file_contents)
     print(num_words_message)
 
 
