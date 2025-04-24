@@ -16,22 +16,22 @@ def get_book_text(file_path: str):
         file_path (str): path to the file
 
     Returns:
-        str: contents of the file
+        str: text in the file as string
     """
     with open(file_path) as f:
-        file_contents = f.read()
+        text = f.read()
 
-    return file_contents
+    return text
 
 
 def main():
     """Main Function"""
 
-    file_contents = get_book_text("./books/frankenstein.txt")
-    num_words_message = get_number_of_words(file_contents)
+    text = get_book_text("./books/frankenstein.txt")
+    num_words_message = get_number_of_words(text)
     print(num_words_message)
 
-    character_count = get_character_counts(file_contents)
+    character_count = get_character_counts(text)
     print(character_count)
 
 
