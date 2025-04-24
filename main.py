@@ -4,6 +4,8 @@ main.py
 
 The entry point to our program and any code that doesn't fit elsewhere
 """
+import sys
+
 from stats import (
     get_character_counts,
     get_sorted_character_counts,
@@ -48,7 +50,12 @@ Found {words_count} total words
 def main():
     """Main Function"""
 
-    file_path = "books/frankenstein.txt"
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+
+    file_path = sys.argv[1]
+
     text = get_book_text(file_path)
     words_count = get_words_count(text)
 
