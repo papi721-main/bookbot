@@ -18,10 +18,13 @@ def get_book_text(file_path: str):
     Takes a file path as a string and returns
     the contents of the file as a string
     """
-    with open(file_path) as f:
-        text = f.read()
-
-    return text
+    try:
+        with open(file_path) as f:
+            text = f.read()
+        return text
+    except Exception as e:
+        print(e)
+        sys.exit(1)
 
 
 def print_report(
