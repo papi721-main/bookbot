@@ -23,12 +23,14 @@ Run the script:
 
 ```sh
 python3 main.py <filename>
-# or
-# ./main.py
+# or you can also run it as an executable
+# ./main.py <filename>
 ```
 
 Replace <filename> with the path to your text file. For example:
 
 ```sh
-python bookbot.py example.txt
+python3 main.py frankenstein.txt
+# or
+# ./main.py frankenstein.txt
 ```
